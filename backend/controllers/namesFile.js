@@ -1,4 +1,4 @@
-const namesRouter = require('express').Router();
+const namesFileRouter = require('express').Router();
 const fs = require('fs');
 
 const logger = require('../utils/logger');
@@ -16,25 +16,33 @@ fs.readFile('./names.json', (err, data) => {
   }
 });
 
-namesRouter.get('/popular', (req, res) => {
+namesFileRouter.get('/', (req, res) => {
+  res.json(peopleArray);
+});
+
+namesFileRouter.get('/popular', (req, res) => {
   const popularNames = peopleArray.sort((a, b) => b.amount - a.amount);
   res.json(popularNames);
 });
 
-namesRouter.get('/alphabet', (req, res) => {
+namesFileRouter.get('/alphabet', (req, res) => {
   const alphabetNames = peopleArray.sort((a, b) => a.name.localeCompare(b.name));
   res.json(alphabetNames);
 });
 
-namesRouter.get('/total', (req, res) => {
+namesFileRouter.get('/total', (req, res) => {
   const totalAmount = peopleArray.reduce((sum, current) => { return sum + current.amount; }, 0);
   res.json({ totalAmount });
 });
 
-namesRouter.get('/name/:name', (req, res) => {
+namesFileRouter.get('/name/:name', (req, res) => {
   const name = req.params.name;
   const reqName = peopleArray.find(item => item.name === name);
-  res.json({ name: name, amount: reqName.amount });
+  if (reqName) {
+    res.json({ name: name, amount: reqName.amount });
+  } else {
+    res.json({ name: 'Name not found', amount: 'Try again, please' });
+  }
 });
 
-module.exports = namesRouter;
+module.exports = namesFileRouter;
