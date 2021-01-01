@@ -1,0 +1,99 @@
+body {
+  font-family: monospace;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+}
+
+.header {
+  background-color: grey;
+  margin: 0 0 2rem 0;
+  padding: 0.4rem 1rem;
+}
+
+.typewriter {
+  max-width: 370px;
+  overflow: hidden;
+  border-right: .15rem solid orange;
+  white-space: nowrap;
+  letter-spacing: 0.2rem;
+  animation:
+    typing 2.5s steps(60, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.section {
+  margin: 1rem 1rem 2rem;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.bodytext {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.yellow {
+  color:  yellow;
+}
+
+button {
+  margin-left: 1.5rem;
+  padding: 0.2rem 1rem;
+  min-width: 10rem;
+  border-radius: 4rem;
+  background-color: #fff;
+  border-collapse: #fff;
+  color: #000;
+  box-shadow: none;
+}
+
+button:hover {
+  padding: 0.3rem 1.1rem;
+  background-color: #000;
+  border-color: #fff;
+  color: #fff;
+  box-shadow: none;
+  
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+thead {
+  font-size: 1.2rem;
+  background-color: lightgray;
+  color: black;
+}
+
+th, td {
+  padding: 0.3rem 0.5rem;
+  min-width: 12.1rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fff;
+  color: #000;
+}
+
+form {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
