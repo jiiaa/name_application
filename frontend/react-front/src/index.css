@@ -11,27 +11,6 @@ body {
   padding: 0.4rem 1rem;
 }
 
-.typewriter {
-  max-width: 370px;
-  overflow: hidden;
-  border-right: .15rem solid orange;
-  white-space: nowrap;
-  letter-spacing: 0.2rem;
-  animation:
-    typing 2.5s steps(60, end),
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-
 .menu {
   display: inline-block;
   cursor: pointer;
@@ -90,6 +69,8 @@ table {
   border-collapse: collapse;
   font-size: 1rem;
   margin-left: 0.5rem;
+  max-width: 26rem;
+  width: 100%;
 }
 thead {
   font-size: 1.2rem;
@@ -99,7 +80,6 @@ thead {
 
 th, td {
   padding: 0.3rem 0.5rem;
-  min-width: 12.1rem;
   text-align: left;
 }
 
