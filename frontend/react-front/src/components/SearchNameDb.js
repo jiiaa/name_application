@@ -1,16 +1,22 @@
+// Database API frontend
+// Form view for searching a name
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const SearchNameDb = () => {
+  // Name to be search for
   const [searchValue, setSearchValue] = useState('');
+  // API response
   const [searchResult, setSearchResult] = useState('');
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
   };
 
+  // Handle form submit
   const handleSearch = (e) => {
     e.preventDefault();
+    // Change the first character of the name to uppercase
     const a = searchValue.charAt(0);
     const b = a.toUpperCase();
     const c = searchValue.slice(1);

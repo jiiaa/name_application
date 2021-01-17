@@ -1,5 +1,6 @@
 const logger = require('./logger');
 
+// Middleware function for logging requests
 const requestLogger = (req, res, next) => {
   const d = new Date();
   const options = { hour12: false };
@@ -11,6 +12,7 @@ const requestLogger = (req, res, next) => {
   next();
 };
 
+// Middleware function taking care of unknown paths
 const unknownEndpoint = (req, res) => {
   res.status(404).send({ error: 'Unknown endpoint' });
 };

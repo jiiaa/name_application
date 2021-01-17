@@ -1,3 +1,4 @@
+// Service module for database
 const { Pool } = require('pg');
 const config = require('../utils/config');
 const logger = require('../utils/logger');
@@ -11,6 +12,7 @@ const conops = {
 
 const pool = new Pool(conops);
 
+// Get all names
 const readAll = (callback) => {
   const sqlSelect = 'SELECT * FROM names';
   pool.connect((err, client) => {
@@ -29,6 +31,7 @@ const readAll = (callback) => {
   });
 };
 
+// Get all names sorted by amount of each name
 const getPopular = (callback) => {
   const sqlPopular = 'SELECT * FROM names ORDER BY amount DESC';
   pool.connect((err, client) => {
@@ -47,6 +50,7 @@ const getPopular = (callback) => {
   });
 };
 
+// Get all names in alphabetical order
 const getAlpha = (callback) => {
   const sqlPopular = 'SELECT * FROM names ORDER BY name ASC';
   pool.connect((err, client) => {
@@ -65,6 +69,7 @@ const getAlpha = (callback) => {
   });
 };
 
+// Get the sum of amounts of each name
 const getTotal = (callback) => {
   const sqlPopular = 'SELECT SUM(amount) FROM names';
   pool.connect((err, client) => {
@@ -83,6 +88,7 @@ const getTotal = (callback) => {
   });
 };
 
+// Get the name by a name
 const getByName = (name, callback) => {
   const sqlPopular = 'SELECT * FROM names WHERE name ILIKE $1::text';
   const param = [name];

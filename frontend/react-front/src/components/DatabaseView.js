@@ -1,3 +1,4 @@
+// View for the database API
 import React from 'react';
 import NamesListDb from './NamesListDb';
 import SearchNameDb from './SearchNameDb';

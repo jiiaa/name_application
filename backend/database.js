@@ -1,3 +1,7 @@
+/**
+ * This file takes care of creating the database table
+ * and inserting the initial data to the table
+ **/
 const { Pool } = require('pg');
 const format = require('pg-format');
 const config = require('./utils/config');

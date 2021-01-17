@@ -1,3 +1,5 @@
+// Database API frontend
+// View to display the sum of amounts of all names
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 

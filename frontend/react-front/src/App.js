@@ -3,16 +3,20 @@ import DatabaseView from './components/DatabaseView';
 import FileView from './components/FileView';
 
 const App = () => {
+  // Control the active view (file or database)
   const [view, setView] = useState('file');
+  // Set the active menu item
   const [fileActive, setFileActive] = useState('active');
   const [databaseActive, setDatabaseActive] = useState('');
 
+  // Menu item click handler to set the File view active
   const handleFileView = () => {
     setView('file');
     setFileActive('active');
     setDatabaseActive('');
   };
 
+  // Menu item click handler to set the Databse view active
   const handleDatabaseView = () => {
     setView('database');
     setFileActive('');

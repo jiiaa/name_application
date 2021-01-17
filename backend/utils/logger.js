@@ -1,3 +1,4 @@
+// General module for logging
 const logInfo = (...params) => {
   if (process.env.NODE_ENV !== 'test') {
     console.log(...params);

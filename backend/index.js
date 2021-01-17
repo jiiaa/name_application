@@ -1,7 +1,9 @@
 const app = require('./app');
 const http = require('http');
 
+// Require the environment variables
 const config = require('./utils/config');
+// Require the general logger
 const logger = require('./utils/logger');
 
 const server = http.createServer(app);
