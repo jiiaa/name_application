@@ -16,6 +16,12 @@ const SearchName = () => {
   // Handle form submit
   const handleSearch = (e) => {
     e.preventDefault();
+    // Handle empty input value
+    if (!searchValue) {
+      const notification = { name: 'No name enterd', amount: 'Enter a name' };
+      setSearchResult(notification);
+      return '';
+    }
     // Change the first character of the name to uppercase
     const a = searchValue.charAt(0);
     const b = a.toUpperCase();

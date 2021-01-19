@@ -37,7 +37,7 @@ const getByName = name => {
     })
     .catch(err => {
       console.log(err);
-      return ({ name: 'Server error' });
+      return ([{ name: 'Server error', amount: 'Try again later' }]);
     });
 };
 

@@ -34,7 +34,11 @@ namesDbRouter.get('/total', (req, res) => {
 namesDbRouter.get('/name/:name', (req, res) => {
   const name = req.params.name;
   dbService.getByName(name, function (response) {
-    res.json(response);
+    if (response.length > 0) {
+      res.json(response);
+    } else {
+      res.json([{ name: 'Name not found', amount: 'Try again, please.' }]);
+    }
   });
 });
 

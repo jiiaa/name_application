@@ -16,7 +16,6 @@ const NamesListDb = () => {
     axios
       .get('/api/database/alphabet')
       .then(response => {
-        console.log(response);
         const sortedNames = response.data;
         setNames(sortedNames);
         setIsLoading(false);

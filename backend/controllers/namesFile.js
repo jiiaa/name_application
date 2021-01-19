@@ -49,7 +49,7 @@ namesFileRouter.get('/name/:name', (req, res) => {
   if (reqName) {
     res.json({ name: name, amount: reqName.amount });
   } else {
-    res.json({ name: 'Name not found', amount: 'Try again, please' });
+    res.json({ name: 'Name not found', amount: 'Try again, please.' });
   }
 });
 
